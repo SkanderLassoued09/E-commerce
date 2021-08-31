@@ -1,0 +1,22 @@
+<div class="body">
+  <h2>Sign in</h2>
+  <form #form="ngForm" (ngSubmit)="login(form)">
+    <div class="mb-3">
+      <input required ngModel #email="ngModel" name="email" placeholder="Enter your E-mail" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div class="alert alert-danger" role="alert" *ngIf="email.invalid && email.touched">
+      Your E-mail is wrong
+    </div>
+    <div class="mb-3">
+      <input required ngModel #password="ngModel" name="password" minlength="6" placeholder="Enter your password" type="password" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="alert alert-danger" role="alert" *ngIf="password.invalid && password.touched">
+      Your password is wrong
+    </div>
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" [disabled]="form.invalid" class="btn btn-primary">Submit</button>
+  </form>
+</div>

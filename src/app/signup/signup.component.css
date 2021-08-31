@@ -1,0 +1,12 @@
+
+h2{
+  text-align: center;
+}
+.form-control{
+  max-width: 700px;
+  margin: 5px auto;
+}
+.col-12{
+  display: flex;
+    justify-content: center;
+}

@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "E-commerc"
+  "defaultProject": "E-commerc",
+  "cli": {
+    "analytics": "0a94e98b-c3b2-4f5b-aeeb-cb02b20d4fdc"
+  }
 }

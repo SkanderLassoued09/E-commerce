@@ -1,0 +1,28 @@
+<div class="body">
+  <h2>Sign up</h2>
+  <form #form="ngForm" (ngSubmit)="addUser(form)">
+    <input required ngModel #firstName="ngModel" name="firstName" type="text" class="form-control"  placeholder="First name">
+    <div class="alert alert-danger" role="alert" *ngIf="firstName.invalid && firstName.touched">
+      You should enter first name
+    </div>
+    <input required ngModel #lastName="ngModel" name="lastName" type="text" class="form-control"  placeholder="Last name">
+    <div class="alert alert-danger" role="alert" *ngIf="lastName.invalid && lastName.touched">
+      You should enter last name
+    </div>
+    <input required ngModel #email="ngModel" name="email" type="text" class="form-control"  placeholder="E-mail">
+    <div class="alert alert-danger" role="alert" *ngIf="email.invalid && email.touched">
+      Invalid E-mail
+    </div>
+    <input required minlength="6" #password="ngModel" ngModel name="password" type="password" class="form-control"  placeholder="Password">
+    <div class="alert alert-danger" role="alert" *ngIf="password.invalid && password.touched" >
+      Your password not correct must be greater than 6 character
+    </div>
+    <input required minlength="6" #rePsw="ngModel" ngModel name="rePsw" type="password" class="form-control"  placeholder="Confirm password">
+    <div class="alert alert-danger" role="alert" *ngIf="rePsw.invalid && rePsw.touched && password.value != rePsw.value" >
+      Error in the confirmation
+    </div>
+    <div class="col-12">
+      <button class="btn btn-primary " [disabled]="form.invalid" type="submit">Submit</button>
+    </div>
+  </form>
+</div>

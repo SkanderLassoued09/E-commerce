@@ -1,0 +1,22 @@
+<h2>Cart</h2>
+<table class="table">
+  <thead>
+    <td>Name</td>
+    <td>Price</td>
+    <td>Amount</td>
+    <td>Total</td>
+    <td>Options</td>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cart of cartProds; let i = index">
+      <td>{{cart.name}}</td>
+      <td>{{cart.price |currency }}</td>
+      <td>{{cart.amount}}</td>
+      <td>{{cart.price * cart.amount | currency}}</td>
+<td>
+  <button class="btn btn-success">Save</button>
+  <button class="btn btn-warning" (click)="delete(i)">Delete</button>
+</td>
+    </tr>
+  </tbody>
+</table>
